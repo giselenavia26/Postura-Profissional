@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Postura Profissional | Manual Estudantil & Guia de Boas Práticas</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#1e293b',
+                            900: '#1e3a8a',
+                            950: '#0f172a',
+                        },
+                        academic: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        },
+                        sunshine: {
+                            100: '#fef3c7',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        mint: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 60%, #0284c7 100%);
+        }
+        .accent-gradient-text {
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #printable-certificate, #printable-certificate * {
+                visibility: visible;
+            }
+            #printable-certificate {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 font-sans antialiased selection:bg-sunshine-500 selection:text-slate-900">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-indigo-100/80 shadow-sm transition-all duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                
+                <!-- Logo SENAI + POSTURA STUDENT -->
+                <div class="flex items-center gap-3">
+                    <img src="senai.jpg" alt="Logo SENAI" class="h-14 w-auto object-contain">
+                    <div>
+                        <span class="font-display font-extrabold text-navy-900 tracking-tight text-xl">POSTURA<span class="text-academic-600">STUDENT</span></span>
+                        <span class="block text-[10px] text-slate-500 font-bold tracking-wider uppercase">Manual de Práticas Estudantis SENAI</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center space-x-6 text-sm font-semibold text-slate-600">
+                    <a href="#conceito" class="hover:text-academic-600 transition-colors">O que é?</a>
+                    <a href="#ambientes" class="hover:text-academic-600 transition-colors">Ambientes</a>
+                    <a href="#atitudes" class="hover:text-academic-600 transition-colors">Impacto</a>
+                    <a href="#softskills" class="hover:text-academic-600 transition-colors">Soft Skills</a>
+                    <a href="#comparativo" class="hover:text-academic-600 transition-colors">Mercado</a>
+                    <a href="#compromisso" class="hover:text-academic-600 transition-colors">Checklist</a>
+                </nav>
+
+                <div class="flex items-center gap-3">
+                    <a href="#desafio" class="px-4 py-2 text-xs font-extrabold text-navy-950 bg-sunshine-500 hover:bg-sunshine-400 rounded-xl shadow-md shadow-sunshine-500/20 transition-all hover:-translate-y-0.5 flex items-center gap-2">
+                        <i class="fa-solid fa-certificate"></i> Emita Certificado
+                    </a>
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100" aria-label="Abrir Menu">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-2 pb-4 space-y-2 text-sm font-medium">
+            <a href="#conceito" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-academic-50">O que é Postura?</a>
+            <a href="#ambientes" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-academic-50">Ambientes Escolares</a>
+            <a href="#atitudes" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-academic-50">Impacto das Atitudes</a>
+            <a href="#softskills" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-academic-50">Soft Skills em Ação</a>
+            <a href="#comparativo" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-academic-50">Eu no Mercado</a>
+            <a href="#compromisso" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-academic-50">Checklist de Práticas</a>
+            <a href="#desafio" class="block px-3 py-2 rounded-md bg-sunshine-100 text-sunshine-600 font-bold">Gerar Certificado</a>
+        </div>
+    </header>
+
+    <!-- SECTION 1: HERO -->
+    <section class="relative hero-gradient text-white pt-12 pb-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-sunshine-400 text-xs font-extrabold uppercase tracking-wider mb-6">
+                        <i class="fa-solid fa-sparkles"></i> Preparação Estudantil SENAI & Futuro Profissional
+                    </div>
+                    <h1 class="font-display text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight text-white mb-6">
+                        POSTURA PROFISSIONAL <br><span class="accent-gradient-text">COMEÇA NA ESCOLA</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-academic-50 max-w-2xl font-normal leading-relaxed mb-8 italic">
+                        "O profissional que você será amanhã é construído diretamente nas atitudes e escolhas que você tem hoje."
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4">
+                        <a href="#conceito" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-sunshine-500 hover:bg-sunshine-400 text-navy-950 font-extrabold text-base shadow-lg transition-all hover:-translate-y-1 flex items-center justify-center gap-2">
+                            Explore o Manual <i class="fa-solid fa-arrow-down text-sm"></i>
+                        </a>
+                        <a href="#compromisso" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-base backdrop-blur-md border border-white/20 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-list-check text-mint-500"></i> Checklist de Práticas
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20">
+                            <img src="estudantes.jpg" alt="Estudantes colaborando em grupo na sala de aula" class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500">
+                            <div class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-navy-950/90 to-transparent text-white">
+                                <span class="text-xs font-bold text-sunshine-400 uppercase tracking-wider block">Convivência & Aprendizado SENAI</span>
+                                <p class="text-xs font-medium text-slate-200">Construindo o futuro em equipe.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: CONCEITO -->
+    <section id="conceito" class="py-20 bg-academic-50/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center mb-16">
+                <div class="lg:col-span-5 order-2 lg:order-1">
+                    <div class="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white">
+                        <img src="imagem2.jpg" alt="Grupo de estudos" class="w-full h-80 object-cover">
+                    </div>
+                </div>
+                <div class="lg:col-span-7 order-1 lg:order-2">
+                    <span class="text-xs font-extrabold text-academic-600 uppercase tracking-widest bg-academic-100 px-3.5 py-1.5 rounded-full">Fundamentos Estudantis</span>
+                    <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-navy-950 mt-3 tracking-tight">O que significa ter Postura Profissional no SENAI?</h2>
+                    <p class="text-slate-600 mt-4 text-base leading-relaxed">
+                        A escola é o seu laboratório oficial de formação profissional! Ter uma postura adequada não significa perder a espontaneidade, mas sim exercitar o <strong>respeito, responsabilidade, organização e empatia</strong> no cotidiano escolar.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: ESPAÇOS -->
+    <section id="ambientes" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-extrabold text-academic-600 uppercase tracking-widest bg-academic-100 px-3.5 py-1.5 rounded-full">Guia de Vivência</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-navy-950 mt-3 tracking-tight">Como se comportar nos espaços da escola</h2>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 border-b border-slate-200 pb-4 mb-10">
+                <button onclick="switchTab('sala')" id="tab-sala" class="px-5 py-3 font-bold text-xs sm:text-sm rounded-xl transition-all flex items-center gap-2 bg-academic-600 text-white shadow-md">
+                    <i class="fa-solid fa-chalkboard-user"></i> Sala de Aula
+                </button>
+                <button onclick="switchTab('corredores')" id="tab-corredores" class="px-5 py-3 font-bold text-xs sm:text-sm rounded-xl text-slate-600 hover:bg-slate-100 transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-person-walking"></i> Corredores
+                </button>
+                <button onclick="switchTab('convivencia')" id="tab-convivencia" class="px-5 py-3 font-bold text-xs sm:text-sm rounded-xl text-slate-600 hover:bg-slate-100 transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-utensils"></i> Convivência
+                </button>
+                <button onclick="switchTab('pro')" id="tab-pro" class="px-5 py-3 font-bold text-xs sm:text-sm rounded-xl text-slate-600 hover:bg-slate-100 transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-laptop-code"></i> Laboratórios & Oficinas
+                </button>
+            </div>
+
+            <!-- Tab Contents -->
+            <div class="max-w-5xl mx-auto bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
+                <div id="content-sala" class="space-y-6">
+                    <h3 class="text-xl font-extrabold text-navy-950">Sala de Aula: Foco & Aprendizado</h3>
+                    <p class="text-sm text-slate-600">Participe das atividades com foco, respeite o professor e evite conversas paralelas durante as explicações.</p>
+                </div>
+                <div id="content-corredores" class="hidden space-y-6">
+                    <h3 class="text-xl font-extrabold text-navy-950">Corredores e Passagens</h3>
+                    <p class="text-sm text-slate-600">Mantenha a circulação livre, evite gritos e respeite as turmas que estão em horário de aula.</p>
+                </div>
+                <div id="content-convivencia" class="hidden space-y-6">
+                    <h3 class="text-xl font-extrabold text-navy-950">Áreas de Convivência</h3>
+                    <p class="text-sm text-slate-600">Mantenha o ambiente limpo, recolha o seu lixo e respeite o espaço de descanso dos colegas.</p>
+                </div>
+                <div id="content-pro" class="hidden space-y-6">
+                    <h3 class="text-xl font-extrabold text-navy-950">Laboratórios e Oficinas SENAI</h3>
+                    <p class="text-sm text-slate-600">Manuseie os equipamentos e ferramentas com cuidado, utilize os EPIs, siga as regras de segurança e preserve o patrimônio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: IMPACTO -->
+    <section id="atitudes" class="py-20 bg-slate-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-xs font-extrabold text-sunshine-400 uppercase tracking-widest bg-white/10 px-3.5 py-1.5 rounded-full border border-white/10">Análise de Percepção</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white mt-3 tracking-tight">Atitude pequena, impacto grande</h2>
+                <p class="text-slate-300 mt-3 text-base">Descubra como comportamentos simples do dia a dia na escola são interpretados no mercado de trabalho.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-slate-800/90 rounded-2xl p-6 border border-slate-700">
+                    <span class="px-2.5 py-1 rounded-md text-[10px] font-extrabold bg-amber-500/20 text-amber-400 uppercase">Ponto de Atenção</span>
+                    <h3 class="font-bold text-base text-white mt-3 mb-2">Sentar em locais não permitidos</h3>
+                    <p class="text-xs text-amber-300 font-semibold mb-2">O que transmite: Falta de atenção às regras.</p>
+                    <p class="text-xs text-slate-400">Demonstra pouca consideração pelas diretrizes do ambiente.</p>
+                </div>
+                <div class="bg-slate-800/90 rounded-2xl p-6 border border-slate-700">
+                    <span class="px-2.5 py-1 rounded-md text-[10px] font-extrabold bg-amber-500/20 text-amber-400 uppercase">Ponto de Atenção</span>
+                    <h3 class="font-bold text-base text-white mt-3 mb-2">Gritar nos corredores</h3>
+                    <p class="text-xs text-amber-300 font-semibold mb-2">O que transmite: Falta de respeito ao espaço comum.</p>
+                    <p class="text-xs text-slate-400">Incomoda quem está estudando ou trabalhando nas salas ao lado.</p>
+                </div>
+                <div class="bg-slate-800/90 rounded-2xl p-6 border border-slate-700">
+                    <span class="px-2.5 py-1 rounded-md text-[10px] font-extrabold bg-emerald-500/20 text-emerald-400 uppercase">Atitude Positiva</span>
+                    <h3 class="font-bold text-base text-white mt-3 mb-2">Manter o ambiente organized</h3>
+                    <p class="text-xs text-emerald-300 font-semibold mb-2">O que transmite: Responsabilidade e liderança.</p>
+                    <p class="text-xs text-slate-400">Demonstra maturidade e preocupação com o bem-estar coletivo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: SOFT SKILLS -->
+    <section id="softskills" class="py-20 bg-academic-50/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-extrabold text-academic-600 uppercase tracking-widest bg-academic-100 px-3.5 py-1.5 rounded-full">Competências Comportamentais</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-navy-950 mt-3 tracking-tight">Soft Skills em Ação na Escola</h2>
+                <p class="text-slate-600 mt-3 text-base">Habilidades humanas valorizadas nas melhores vagas do mercado de trabalho.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200">
+                    <div class="w-12 h-12 rounded-2xl bg-academic-100 text-academic-600 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-ear-listen"></i>
+                    </div>
+                    <h3 class="font-extrabold text-navy-950 text-lg mb-2">Respeito & Escuta</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">Saber ouvir os colegas e professores sem interromper e acolher diferentes opiniões.</p>
+                </div>
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200">
+                    <div class="w-12 h-12 rounded-2xl bg-sunshine-100 text-sunshine-600 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="font-extrabold text-navy-950 text-lg mb-2">Pontualidade & Prazos</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">Entregar trabalhos no dia correto e chegar no horário das aulas e reuniões de grupo.</p>
+                </div>
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200">
+                    <div class="w-12 h-12 rounded-2xl bg-mint-100 text-mint-600 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3 class="font-extrabold text-navy-950 text-lg mb-2">Trabalho em Equipe</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">Dividir tarefas com justiça, ajudar os colegas e focar no objetivo do grupo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: MERCADO / COMPARATIVO -->
+    <section id="comparativo" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-extrabold text-academic-600 uppercase tracking-widest bg-academic-100 px-3.5 py-1.5 rounded-full">Espelho de Carreira</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-navy-950 mt-3 tracking-tight">Eu na Escola vs. Eu no Mercado</h2>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                <div class="bg-slate-50 p-8 rounded-3xl border-2 border-slate-200">
+                    <h3 class="text-xl font-extrabold text-navy-950 mb-4"><i class="fa-solid fa-school text-rose-500 mr-2"></i> Na Escola</h3>
+                    <p class="text-slate-600 text-sm mb-4">"Posso fazer de qualquer jeito porque ninguém está vendo."</p>
+                    <p class="text-xs text-slate-500 italic">Cria hábitos prejudiciais que atrasam seu desenvolvimento.</p>
+                </div>
+                <div class="bg-gradient-to-br from-navy-900 to-academic-700 text-white p-8 rounded-3xl shadow-xl">
+                    <h3 class="text-xl font-extrabold text-white mb-4"><i class="fa-solid fa-briefcase text-sunshine-400 mr-2"></i> No Mercado de Trabalho</h3>
+                    <p class="text-academic-50 text-sm mb-4">"Minha postura será observada por colegas, gestores e clientes."</p>
+                    <p class="text-xs text-sunshine-400 italic">Garante portas abertas e oportunidades de crescimento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: CHECKLIST -->
+    <section id="compromisso" class="py-20 bg-academic-50/60">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-xs font-extrabold text-academic-600 uppercase tracking-widest bg-academic-100 px-3.5 py-1.5 rounded-full">Manifesto Estudantil</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-navy-950 mt-3 tracking-tight">Checklist de Boas Práticas Profissionais</h2>
+            </div>
+
+            <div class="bg-white p-6 sm:p-10 rounded-3xl shadow-lg border border-slate-200">
+                <div class="mb-8">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-xs font-extrabold uppercase text-navy-950">Seu Nível de Engajamento:</span>
+                        <span id="checklist-counter" class="text-xs font-bold text-academic-600">0 de 10 concluídos</span>
+                    </div>
+                    <div class="w-full bg-slate-100 rounded-full h-3 overflow-hidden">
+                        <div id="checklist-progress" class="bg-gradient-to-r from-academic-600 to-mint-500 h-full w-0 transition-all duration-300"></div>
+                    </div>
+                </div>
+
+                <div id="checklist-items-container" class="space-y-4"></div>
+
+                <div class="mt-8 pt-6 border-t border-slate-100 flex justify-between items-center">
+                    <button onclick="checkAllItems()" class="text-xs font-extrabold text-academic-600 hover:text-academic-700 underline">
+                        Marcar Todos os Itens do Checklist
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: DESAFIO & CERTIFICADO -->
+    <section id="desafio" class="py-20 bg-navy-950 text-white relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-display text-4xl font-extrabold text-white mb-4">Emita seu Certificado de Postura Profissional</h2>
+            
+            <div class="max-w-xl mx-auto bg-white/10 p-8 rounded-3xl border border-white/20 text-left mt-8">
+                <form id="cert-form" onsubmit="generateCertificate(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Seu Nome Completo</label>
+                        <input type="text" id="student-name" required placeholder="Ex: Maria Silva" class="w-full px-4 py-3 rounded-xl bg-white text-slate-900 font-semibold text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-300 mb-1">Sua Turma</label>
+                        <input type="text" id="student-class" required placeholder="Ex: 2º Ano A" class="w-full px-4 py-3 rounded-xl bg-white text-slate-900 font-semibold text-sm">
+                    </div>
+                    <button type="submit" class="w-full py-4 rounded-xl bg-sunshine-500 hover:bg-sunshine-400 text-navy-950 font-extrabold text-base transition-all shadow-lg flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-certificate"></i> Gerar Meu Certificado
+                    </button>
+                </form>
+            </div>
+
+            <!-- Certificado Gerado -->
+            <div id="certificate-container" class="hidden mt-12 max-w-3xl mx-auto">
+                <div id="printable-certificate" class="bg-white text-slate-900 p-8 rounded-3xl border-8 border-navy-900 shadow-2xl text-center">
+                    <div class="flex justify-between items-center mb-6 pb-4 border-b border-slate-200">
+                        <img src="senai-logo.png" alt="Logo SENAI" class="h-8 w-auto object-contain">
+                        <span class="text-xs text-slate-400 font-bold uppercase">Escola de Formação Profissional</span>
+                    </div>
+                    <h2 class="font-display text-2xl font-extrabold text-navy-950 mb-2">CERTIFICADO DE POSTURA PROFISSIONAL</h2>
+                    <p class="text-sm text-slate-700 mb-6">
+                        Certificamos que o(a) estudante <strong id="cert-name-display" class="text-academic-600 font-extrabold">Nome</strong>, da turma <strong id="cert-class-display" class="text-navy-950 font-bold">Turma</strong>, assumiu o compromisso de postura profissional SENAI.
+                    </p>
+                    <div class="flex justify-between text-xs text-slate-500 border-t pt-4">
+                        <span>Data: <strong id="cert-date-display"></strong></span>
+                        <span>Código: <strong id="cert-code-display"></strong></span>
+                    </div>
+                    <button onclick="window.print()" class="mt-6 px-6 py-2.5 rounded-xl bg-navy-900 text-white font-bold text-xs">
+                        <i class="fa-solid fa-print"></i> Imprimir / Salvar PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER COM O SEU NOME -->
+    <footer class="bg-navy-950 text-slate-400 py-8 border-t border-slate-800 text-xs text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="mb-2 text-slate-200">
+                <strong>Atividade: Minha Postura Profissional</strong> • Manual de Boas Práticas e Convivência Escolar
+            </p>
+            <p class="text-slate-400 font-medium">
+                Desenvolvido por <strong class="text-sunshine-400 font-bold">Gisele Laiz Navia Ayca- Desenvolvimento de Sistemas</strong> • Escola SENAI
+            </p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        const checklistItems = [
+            "Respeitar pessoas, espaços e regras da instituição escolar.",
+            "Utilizar cada ambiente de maneira adequada e consciente.",
+            "Manter uma comunicação respeitosa sem ofensas em aula.",
+            "Cuidar do patrimônio, móveis e equipamentos da escola.",
+            "Manter as áreas de convivência e salas organizadas e limpas.",
+            "Demonstrar responsabilidade com prazos de trabalhos e horários.",
+            "Respeitar o momento de aprendizagem dos colegas e do professor.",
+            "Ter consciência de que nossas atitudes impactam o grupo.",
+            "Resolver conflitos por meio do diálogo e empatia.",
+            "Representar a escola com postura profissional em todo lugar."
+        ];
+
+        let selectedItems = new Set();
+
+        function renderChecklist() {
+            const container = document.getElementById('checklist-items-container');
+            if (!container) return;
+            container.innerHTML = '';
+
+            checklistItems.forEach(function(item, index) {
+                const isChecked = selectedItems.has(index);
+                const div = document.createElement('div');
+                div.className = 'p-4 rounded-2xl border transition-all cursor-pointer flex items-start gap-3 ' + (isChecked ? 'bg-mint-50 border-mint-500' : 'bg-slate-50 border-slate-200');
+                div.onclick = function() { toggleChecklistItem(index); };
+
+                const iconHTML = isChecked ? '<i class="fa-solid fa-check"></i>' : '';
+                const boxClass = isChecked ? 'bg-mint-500 text-white' : 'border-2 border-slate-300 bg-white';
+
+                div.innerHTML = '<div class="mt-0.5 w-5 h-5 rounded-md flex items-center justify-center text-xs font-bold ' + boxClass + '">' + iconHTML + '</div>' +
+                                '<span class="text-xs sm:text-sm font-medium ' + (isChecked ? 'text-navy-950 font-bold' : 'text-slate-700') + '">' + (index + 1) + '. ' + item + '</span>';
+                
+                container.appendChild(div);
+            });
+
+            updateProgress();
+        }
+
+        function toggleChecklistItem(index) {
+            if (selectedItems.has(index)) {
+                selectedItems.delete(index);
+            } else {
+                selectedItems.add(index);
+            }
+            renderChecklist();
+        }
+
+        function checkAllItems() {
+            if (selectedItems.size === checklistItems.length) {
+                selectedItems.clear();
+            } else {
+                checklistItems.forEach(function(_, idx) { selectedItems.add(idx); });
+            }
+            renderChecklist();
+        }
+
+        function updateProgress() {
+            const count = selectedItems.size;
+            const total = checklistItems.length;
+            const percentage = (count / total) * 100;
+
+            const counterEl = document.getElementById('checklist-counter');
+            const progressEl = document.getElementById('checklist-progress');
+
+            if (counterEl) counterEl.innerText = count + ' de ' + total + ' concluídos';
+            if (progressEl) progressEl.style.width = percentage + '%';
+        }
+
+        function switchTab(tab) {
+            const tabs = ['sala', 'corredores', 'convivencia', 'pro'];
+            
+            tabs.forEach(function(t) {
+                const btn = document.getElementById('tab-' + t);
+                const content = document.getElementById('content-' + t);
+                
+                if (btn && content) {
+                    if (t === tab) {
+                        btn.className = "px-5 py-3 font-bold text-xs sm:text-sm rounded-xl transition-all flex items-center gap-2 bg-academic-600 text-white shadow-md";
+                        content.classList.remove('hidden');
+                    } else {
+                        btn.className = "px-5 py-3 font-bold text-xs sm:text-sm rounded-xl text-slate-600 hover:bg-slate-100 transition-all flex items-center gap-2";
+                        content.classList.add('hidden');
+                    }
+                }
+            });
+        }
+
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        if (menuBtn) {
+            menuBtn.addEventListener('click', function() {
+                const menu = document.getElementById('mobile-menu');
+                if (menu) menu.classList.toggle('hidden');
+            });
+        }
+
+        function generateCertificate(e) {
+            e.preventDefault();
+            const name = document.getElementById('student-name').value;
+            const studentClass = document.getElementById('student-class').value;
+
+            document.getElementById('cert-name-display').innerText = name;
+            document.getElementById('cert-class-display').innerText = studentClass;
+
+            const today = new Date();
+            document.getElementById('cert-date-display').innerText = today.toLocaleDateString('pt-BR');
+            document.getElementById('cert-code-display').innerText = 'SENAI-' + today.getFullYear() + '-' + Math.floor(1000 + Math.random() * 9000);
+
+            const certContainer = document.getElementById('certificate-container');
+            if (certContainer) {
+                certContainer.classList.remove('hidden');
+                certContainer.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        window.onload = function() {
+            renderChecklist();
+        };
+    </script>
+</body>
+</html>
